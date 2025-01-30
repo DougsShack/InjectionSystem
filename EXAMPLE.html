@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DSIS Example Page</title>
+    <!-- Include the DSIS script -->
+    <script src="dsis/dsis.js"></script>
+    <noscript>
+        <div style="color: red; padding: 1rem; border: 1px solid red;">
+            This website requires JavaScript to load headers/footers.
+        </div>
+    </noscript>
+    <style>
+        .dsis-error {
+            color: red;
+            padding: 1rem;
+            border: 1px solid red;
+        }
+
+        code {
+            background-color: #f0f0f0;
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.2rem;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; font-family: Arial, sans-serif;">
+    <!-- Header component will be injected here -->
+    <div id="dsis-examplehead" data-dsis-callback="callbackTest"></div>
+
+    <!-- Main content -->
+    <main style="max-width: 1200px; margin: 2rem auto; padding: 0 1rem;">
+        <h1>Welcome to DSIS Example</h1>
+        <p>This page demonstrates Doug's Shack Injection System (DSIS) in action.</p>
+
+        <h2>How It Works</h2>
+        <p>The header and footer on this page are automatically injected from separate HTML files:</p>
+        <ul>
+            <li>Header comes from: <code>dsis/examplehead.html</code></li>
+            <li>Footer comes from: <code>dsis/examplefoot.html</code></li>
+        </ul>
+        <p>You can also use callbacks to execute code when the component is loaded. This is done by adding the <code>data-dsis-callback</code>
+            attribute to the <code>&lt;div&gt;</code> element. In this example the callback function is <code>callbackTest</code>.</p>
+
+        <h2>Try It Yourself</h2>
+        <p>To use DSIS in your own pages:</p>
+        <ol>
+            <li>Include <code>&lt;script src="dsis/dsis.js"&gt;&lt;/script&gt;</code> in your head section</li>
+            <li>Add <code>&lt;div id="dsis-componentname"&gt;&lt;/div&gt;</code> where you want components to appear
+            </li>
+            <li>Create your component files in the <code>dsis/</code> folder</li>
+        </ol>
+
+        <h2>Error Example</h2>
+        <p>This is an example of an error that will be displayed if the component file is not found. The error is also logged to the browser console.</p>
+        <div id="dsis-doesnotexist"></div>
+        <p>You can use the CSS class <code>dsis-error</code> to style the error message.</p>
+    </main>
+
+    <!-- Footer component will be injected here -->
+    <div id="dsis-examplefoot"></div>
+
+    <!-- Example of using callbacks -->
+    <script>
+        window.callbackTest = () => {
+            console.log('Header has been loaded!');
+        };
+    </script>
+</body>
+
+</html>
