@@ -1,5 +1,6 @@
 /**
  * Doug's Shack Injection System (DSIS)
+ * https://github.com/DougsShack/InjectionSystem/
  * A simple system for injecting HTML components into static websites.
  * 
  * How it works:
